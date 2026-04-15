@@ -388,10 +388,10 @@ FastAPI for excellent documentation
 Python community for amazing libraries
 
 📞 Contact
-Built by: [Your Name]
+Built by: Yaswanth Rajana
 Project: Laundry Order Management System
 Date: April 2026
-GitHub: [Your Repo Link]
+GitHub: https://github.com/Yaswanth-rajana/laundry-system.git
 
 ## ⚡ Quick Commands Reference
 
