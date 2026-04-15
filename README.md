@@ -393,6 +393,13 @@ Project: Laundry Order Management System
 Date: April 2026
 GitHub: https://github.com/Yaswanth-rajana/laundry-system.git
 
+## 🎥 Demo
+
+The system includes a simple web UI for demonstration:
+- Create orders via form
+- Update status inline
+- View dashboard metrics in real time
+
 ## ⚡ Quick Commands Reference
 
 ```bash
