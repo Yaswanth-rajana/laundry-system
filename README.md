@@ -14,6 +14,8 @@ A production-ready laundry order management system that allows dry cleaning stor
 - Calculate revenue and business metrics
 - View real-time dashboard analytics
 
+The system evolved iteratively based on evaluator feedback, including architecture refactoring and storage improvements.
+
 **Time to build:** 72 hours  
 **AI tools used:** ChatGPT-4, GitHub Copilot  
 **Code ratio:** 70% AI-generated, 30% human-improved
@@ -61,7 +63,7 @@ List Orders	View all orders with details	✅
 Filter by Status	RECEIVED, PROCESSING, READY, DELIVERED	✅
 Search	By customer name or phone number	✅
 Dashboard	Total orders, revenue, breakdown	✅
-Persistence	JSON file storage (survives restart)	✅
+Persistence	SQLite database (upgraded from JSON during iteration)	✅
 Edge Cases Handled
 Scenario	Response
 Empty garments	❌ 400: "At least one garment required"
@@ -125,7 +127,7 @@ Task	Prompt Used	Result
 Initial scaffolding	"Generate FastAPI project structure for laundry management"	Working boilerplate in 2 minutes
 Pydantic models	"Add validation for phone, quantity, garment types"	15 lines of validation vs writing from scratch
 CRUD endpoints	"Create POST, GET, PATCH endpoints"	All basic endpoints working
-Test generation	"Generate pytest for edge cases"	12 test cases auto-created
+Test generation	"Generate pytest for edge cases"	AI suggested test cases, but full automated test suite was not implemented due to time constraints.
 Frontend UI	"Build HTML/CSS dashboard with order form"	Complete visual interface
 Where AI Failed ❌ (Critical Honesty)
 Failure 1: Status Transition Logic
@@ -260,17 +262,16 @@ python
 text
 DryClean/
 │
-├── main.py                 # Complete FastAPI application
-├── frontend.html           # Web interface (HTML/CSS/JS)
-├── orders.json             # Auto-generated data storage
-├── requirements.txt        # Python dependencies
-│
-└── README.md              # This file
+├── app/                    # Backend (routes, services, storage)
+├── frontend.html           # Web UI
+├── requirements.txt
+└── README.md
+
 File Descriptions
 File	Lines	Purpose
-main.py	~250	API endpoints, validation, state machine
+app/	-	API routes, validation, db services
 frontend.html	~450	Dashboard, order form, real-time updates
-orders.json	Auto	Persistent order storage
+orders.db	Auto	Persistent SQLite storage
 requirements.txt	3	FastAPI, Uvicorn, Pydantic
 📊 API Documentation
 Endpoints Summary
